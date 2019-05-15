@@ -115,6 +115,22 @@ class ImageTransformationFrame extends JFrame {
             }
         });
 
+        fun1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AutoThreshold a = new AutoThreshold();
+                int [][] tab = new int[image.getWidth()][image.getHeight()];
+                int [] tab2 = new int[256];
+                tab = a.RGBTo2D(image);
+                tab2 = a.convertTo1D(tab,image.getWidth(),image.getHeight());
+                int threshold;
+                threshold= a.MaxEntropy(tab2);
+                a.makeGray(image);
+                image = a.binarize(image,threshold);
+                label.setIcon(new ImageIcon(image));
+            }
+        });
+
     }
 
 }
