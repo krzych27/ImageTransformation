@@ -65,4 +65,34 @@ public class AutoThreshold {
         return newPixel;
 
     }
+
+    public BufferedImage binarize(BufferedImage original, int threshold) {
+
+        int red;
+        int newPixel;
+
+        BufferedImage binarized = new BufferedImage(original.getWidth(), original.getHeight(), original.getType());
+
+        for(int i=0; i<original.getWidth(); i++) {
+            for(int j=0; j<original.getHeight(); j++) {
+
+                // Get pixels
+                red = new Color(original.getRGB(i, j)).getRed();
+                int alpha = new Color(original.getRGB(i, j)).getAlpha();
+                if(red > threshold) {
+                    newPixel = 255;
+                }
+                else {
+                    newPixel = 0;
+                }
+                newPixel = colorToRGB(alpha, newPixel, newPixel, newPixel);
+                binarized.setRGB(i, j, newPixel);
+
+            }
+        }
+
+        return binarized;
+
+    }
+    
 }
