@@ -95,7 +95,7 @@ public class AutoThreshold {
 
     }
 
-    int MaxEntropy(int [] data ) {
+    int maxEntropy(int [] data ) {
 
         int threshold=-1;
         int ih, it;

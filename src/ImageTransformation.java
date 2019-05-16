@@ -124,9 +124,18 @@ class ImageTransformationFrame extends JFrame {
                 tab = a.RGBTo2D(image);
                 tab2 = a.convertTo1D(tab,image.getWidth(),image.getHeight());
                 int threshold;
-                threshold= a.MaxEntropy(tab2);
+                threshold= a.maxEntropy(tab2);
                 a.makeGray(image);
                 image = a.binarize(image,threshold);
+                label.setIcon(new ImageIcon(image));
+            }
+        });
+
+        fun2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                KirschFilter kirsh = new KirschFilter();
+                image = kirsh.kirschFilter(image);
                 label.setIcon(new ImageIcon(image));
             }
         });
