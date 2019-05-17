@@ -53,7 +53,7 @@ public class KirschFilter {
         return out;
     }
 
-    private static int[][] convertTo2DArray(BufferedImage image) {
+    public int[][] convertTo2DArray(BufferedImage image) {
         final byte[] pixels = ((DataBufferByte) image.getRaster().getDataBuffer()).getData();
         int width = image.getWidth();
         int height = image.getHeight();
