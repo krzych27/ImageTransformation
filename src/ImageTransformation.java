@@ -153,6 +153,14 @@ class ImageTransformationFrame extends JFrame {
                 label.setIcon(new ImageIcon(image));
             }
         });
+        fun4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ImFill imfill = new ImFill();
+                image = imfill.imfill(image);
+                label.setIcon(new ImageIcon(image));
+            }
+        });
 
     }
 
