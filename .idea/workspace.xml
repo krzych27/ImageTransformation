@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa62aba0-8a31-4a98-900b-62edd681c564" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageTransformation/AutoThreshold.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageTransformation/AutoThreshold.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformationFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformationFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformationFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformationFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformationFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformationFrame$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformationFrame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformationFrame$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformationFrame$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformationFrame$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformationFrame$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformationFrame$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformationFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageTransformation/ImageTransformationFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageTransformation/KirschFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageTransformation/KirschFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageTransformation/OpeningWithLinearElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageTransformation/OpeningWithLinearElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AutoThreshold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AutoThreshold.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ImageTransformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImageTransformation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/KirschFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KirschFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OpeningWithLinearElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OpeningWithLinearElement.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ImageTransformation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="110" column="11" lean-forward="true" selection-start-line="95" selection-start-column="8" selection-end-line="110" selection-end-column="11" />
+            <state relative-caret-position="379">
+              <caret line="141" column="13" lean-forward="true" selection-start-line="141" selection-start-column="13" selection-end-line="141" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3458#3459#0" expanded="true" />
@@ -69,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/KirschFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2006">
-              <caret line="120" column="37" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="37" />
+            <state relative-caret-position="68">
+              <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,9 +81,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/GeneralTranformationFunctions.java" />
         <option value="$PROJECT_DIR$/src/AutoThreshold.java" />
-        <option value="$PROJECT_DIR$/src/KirschFilter.java" />
         <option value="$PROJECT_DIR$/src/OpeningWithLinearElement.java" />
         <option value="$PROJECT_DIR$/src/ImageTransformation.java" />
+        <option value="$PROJECT_DIR$/src/KirschFilter.java" />
       </list>
     </option>
   </component>
@@ -185,12 +170,12 @@
       <workItem from="1558258595486" duration="1392000" />
       <workItem from="1558279676421" duration="4091000" />
       <workItem from="1558367051179" duration="481000" />
-      <workItem from="1558367720634" duration="274000" />
+      <workItem from="1558367720634" duration="999000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15500000" />
+    <option name="totallyTimeSpent" value="16225000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -237,18 +222,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GeneralTranformationFunctions.java" />
-    <entry file="file://$PROJECT_DIR$/src/ImageTransformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="110" column="11" lean-forward="true" selection-start-line="95" selection-start-column="8" selection-end-line="110" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3458#3459#0" expanded="true" />
-            <element signature="e#3504#3505#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OpeningWithLinearElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1122">
@@ -268,10 +241,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/KirschFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2006">
-          <caret line="120" column="37" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="37" />
+        <state relative-caret-position="68">
+          <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ImageTransformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="141" column="13" lean-forward="true" selection-start-line="141" selection-start-column="13" selection-end-line="141" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3458#3459#0" expanded="true" />
+            <element signature="e#3504#3505#0" expanded="true" />
           </folding>
         </state>
       </provider>

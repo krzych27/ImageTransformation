@@ -2,8 +2,7 @@ import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 
-public class KirschFilter{
-
+public class KirschFilter {
     private static int[][][] kirschMask = {
             {{-3, -3, 5},
                     {-3, 0, 5},
@@ -28,26 +27,28 @@ public class KirschFilter{
                     {5, 5, 5}},
             {{-3, -3, -3},
                     {-3, 0, 5},
-                    {-3, 5, 5}},
-    };
+                    {-3, 5, 5}},};
 
-    private static int[][] applyKirschMask(int[][] data, int mask[][]) {
-        int height = data.length;
-        int width = data[0].length;
+    private static int[][] appalyKirschMask(BufferedImage image, int mask[][]) {
+        int height = image.getHeight();
+        int width = image.getWidth();
 
         int[][] out = new int[height - 2][width - 2];
 
         for (int i = 1; i < height - 1; i++) {
             for (int j = 1; j < width - 1; j++) {
-                int sum = 0;
+                int red = 0;
+                int blue = 0;
+                int green = 0;
 
                 for (int ki = -1; ki < 2; ki++) {
                     for (int kj = -1; kj < 2; kj++) {
-                        sum += (data[i + ki][j + kj] * mask[ki + 1][kj + 1]);
+                        red += (image.getRGB(j + kj,i + ki) >> 16 & 0xff) * mask[ki + 1][kj + 1];
+                        green += (image.getRGB(j + kj,i + ki) >> 8 & 0xff) * mask[ki + 1][kj + 1];
+                        blue += (image.getRGB(j + kj,i + ki) & 0xff) * mask[ki + 1][kj + 1];
                     }
                 }
-
-                out[i - 1][j - 1] = sum;
+                out[i - 1][j - 1] = convertFromRGBtoInt(red, green, blue);
             }
         }
 
@@ -118,12 +119,19 @@ public class KirschFilter{
         return isMonochrome;
     }
 
-    public BufferedImage kirschFilter(BufferedImage image) {
+    public static int convertFromRGBtoInt(int R, int G, int B) {
+        int rgb = R;
+        rgb = (rgb << 8) + G;
+        rgb = (rgb << 8) + B;
 
-        int[][] data = convertTo2DArray(image);
+        return rgb;
+    }
+
+    public static BufferedImage kirschFilter(BufferedImage image) {
+
         int[][][] res = new int[8][image.getWidth()][image.getHeight()];
         for(int i=0; i<8; i++)
-            res[i] = applyKirschMask(data, kirschMask[i]);
+            res[i] = appalyKirschMask(image, kirschMask[i]);
 
         BufferedImage result = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_RGB);
 
