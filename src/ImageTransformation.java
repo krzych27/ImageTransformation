@@ -3,7 +3,6 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.awt.event.*;
 import javax.imageio.*;
-import java.util.*;
 
 public class ImageTransformation {
 
@@ -99,11 +98,14 @@ class ImageTransformationFrame extends JFrame {
             public void actionPerformed(final ActionEvent e) {
                 int result = chooser.showSaveDialog(null);
                 //if file selected, set it as icon of label
-                if(result == JFileChooser.APPROVE_OPTION) {
+                if (result == JFileChooser.APPROVE_OPTION) {
                     File name = chooser.getSelectedFile();
-                    //save changed photo to new file "name"
-                    // ImageIO.write(bufferedImage, "jpg", name);
-
+                    try {
+                        ImageIO.write(image, "png", name);
+                    } catch (IOException e2) {
+                        System.err.println("Error.Image save function");
+                        e2.printStackTrace();
+                    }
                 }
             }
         });
@@ -121,7 +123,7 @@ class ImageTransformationFrame extends JFrame {
                 AutoThreshold a = new AutoThreshold();
                 int [][] tab = new int[image.getWidth()][image.getHeight()];
                 int [] tab2 = new int[256];
-                tab = a.RGBTo2D(image);
+                tab = a.convertTo2DArray(image);
                 tab2 = a.convertTo1D(tab,image.getWidth(),image.getHeight());
                 int threshold;
                 threshold= a.maxEntropy(tab2);

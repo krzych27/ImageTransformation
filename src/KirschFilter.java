@@ -1,7 +1,8 @@
+import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 
-public class KirschFilter {
+public class KirschFilter{
 
     private static int[][][] kirschMask = {
             {{-3, -3, 5},
@@ -62,6 +63,20 @@ public class KirschFilter {
 
         int[][] result = new int[height][width];
 
+        if (isMonochrome(image)) {
+            final int pixelLength = 1;
+            for (int pixel = 0, row = 0, col = 0; pixel < pixels.length; pixel += pixelLength) {
+                int grey = ((int) pixels[pixel] & 0xff);
+                result[row][col] = grey;
+                col++;
+                if (col == width) {
+                    col = 0;
+                    row++;
+                }
+            }
+            return result;
+        }
+
         if (hasAlphaChannel) {
             final int pixelLength = 4;
             for (int pixel = 0, row = 0, col = 0; pixel < pixels.length; pixel += pixelLength) {
@@ -94,6 +109,13 @@ public class KirschFilter {
             }
         }
         return result;
+    }
+
+    public static boolean isMonochrome(BufferedImage image) {
+        final int type = image.getColorModel().getColorSpace().getType();
+        final boolean isMonochrome = (type == ColorSpace.TYPE_GRAY || type == ColorSpace.CS_GRAY);
+
+        return isMonochrome;
     }
 
     public BufferedImage kirschFilter(BufferedImage image) {

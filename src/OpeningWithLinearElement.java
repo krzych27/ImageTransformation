@@ -1,8 +1,7 @@
-import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
 
-public class OpeningWithLinearElement {
+public class OpeningWithLinearElement extends KirschFilter {
+
     public static BufferedImage dilate(int[][] data, int radius) {
         int width = data[0].length;
         int height = data.length;
@@ -34,7 +33,6 @@ public class OpeningWithLinearElement {
         int width = data[0].length;
         int height = data.length;
         BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
-        ;
 
         for (int y = radius; y < height - radius; y++)
         {
@@ -68,9 +66,9 @@ public class OpeningWithLinearElement {
         if(radius <=0) {
             return null;
         }
-        KirschFilter k = new KirschFilter();
-        int[][] tmpData = k.convertTo2DArray(erode(data, radius));
-        tmpData = k.convertTo2DArray(dilate(tmpData, radius));
+        //KirschFilter k = new KirschFilter();
+        int[][] tmpData = convertTo2DArray(erode(data, radius));
+        tmpData = convertTo2DArray(dilate(tmpData, radius));
         BufferedImage img = new BufferedImage(tmpData[0].length - 2*radius, tmpData.length - 2*radius, BufferedImage.TYPE_3BYTE_BGR);
         int rgb;
 

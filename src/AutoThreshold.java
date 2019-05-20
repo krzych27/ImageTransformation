@@ -1,16 +1,16 @@
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 
-public class AutoThreshold {
+public class AutoThreshold{
 
     public AutoThreshold() {
     }
 
-    public int[][] RGBTo2D(BufferedImage source){
-        int twoDimensions[][] = new int[source.getWidth()][source.getHeight()];
-        for(int x=0; x<source.getWidth(); x++){
-            for(int y=0; y<source.getHeight(); y++){
-                int c = source.getRGB(x, y);
+    public int[][] convertTo2DArray(BufferedImage image){
+        int twoDimensions[][] = new int[image.getWidth()][image.getHeight()];
+        for(int x=0; x<image.getWidth(); x++){
+            for(int y=0; y<image.getHeight(); y++){
+                int c = image.getRGB(x, y);
                 twoDimensions[x][y] = c;
             }
         }
@@ -53,7 +53,7 @@ public class AutoThreshold {
             }
     }
 
-    private static int colorToRGB(int alpha, int red, int green, int blue) {
+    public int colorToRGB(int alpha, int red, int green, int blue) {
 
         int newPixel = 0;
         newPixel += alpha;
