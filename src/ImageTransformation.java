@@ -145,11 +145,10 @@ class ImageTransformationFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 OpeningWithLinearElement opening = new OpeningWithLinearElement();
-                KirschFilter kirsh = new KirschFilter();
-                int [][] tab = new int[image.getWidth()][image.getHeight()];
-                tab = kirsh.convertTo2DArray(image);
-                int radius = 30;
-                image = opening.opening(tab,radius);
+                ChoiceMask mask = new ChoiceMask();
+                int numbermask = mask.getMaskSize();
+                int [] chosenMask = mask.getMask();
+                image = opening.opening(image,chosenMask,numbermask);
                 label.setIcon(new ImageIcon(image));
             }
         });
